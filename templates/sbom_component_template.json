@@ -4,7 +4,7 @@
     "version": "{component_version}",
     "publisher": "{component_publisher}",
     "description": "{component_description}",
-    "type": "Library",
+    "type": "library",
     "purl": "pkg:{package_manager}/{component_purl}",
     "externalReferences": [
         {

@@ -132,8 +132,8 @@ def fill_sbom_template(template, package_manager):
         "component_bom_ref": f"{package_manager}-packages@0.1.0",
         "component_name": f"{package_manager}-packages",
         "component_version": "0.1.0",
-        "tool_vendor": "MY VENDOR",
-        "tool_name": "MY VENDOR",
+        "tool_vendor": "LMCO",
+        "tool_name": "SSCRM",
         "tool_version": "0.1.0",
         "package_manager": package_manager
     }
@@ -143,7 +143,7 @@ def fill_sbom_template(template, package_manager):
 def generate_sbom(parent_map, sbom_components, sbom_dependencies, component_template, package_manager):
     # Generate components list
     for parent, children in parent_map.items():
-        parent_name, parent_version = parent.split("==")
+        parent_name, parent_version = parent.lower().split("==")
         pypi_info = fetch_pypi_info(parent_name, parent_version)
         purl = f"{parent_name}@{parent_version}"  # Without "pkg:npm/" prefix for the bom-ref
         parent_purl = f"pkg:{package_manager}/{purl}"  # Full purl with "pkg:{package_manager}/" prefix
@@ -154,7 +154,7 @@ def generate_sbom(parent_map, sbom_components, sbom_dependencies, component_temp
             external_references = []
             for key, url in project_urls.items():
                 if "github.com" in url.lower():
-                    external_references.append({"type": "VCS", "url": url})
+                    external_references.append({"type": "vcs", "url": url})
                 else:
                     external_references.append({"type": key, "url": url})
 
@@ -191,7 +191,9 @@ def add_top_level_dependencies(sbom, requirements_txt, package_manager):
     with open(requirements_txt, 'r') as file:
         for line in file:
             line = line.strip()
-            if line and "==" in line:  # Ensure the line is not empty and contains '=='
+            if line and line.startswith('#'):
+                continue
+            elif line and "==" in line:  # Ensure the line is not empty and contains '=='
                 name, version = line.split('==', 1)
                 top_level_refs.append(f"pkg:{package_manager}/{name}@{version.lstrip('^~<>')}")
 

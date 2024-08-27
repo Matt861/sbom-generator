@@ -7,7 +7,7 @@
         "component": {
             "bom-ref": "pkg:{package_manager}/{component_bom_ref}",
             "name": "{component_name}",
-            "type": "Application",
+            "type": "application",
             "version": "{component_version}"
         },
         "tools": [

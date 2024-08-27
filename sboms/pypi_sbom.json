@@ -1,19 +1,19 @@
 {
     "bomFormat": "CycloneDX",
     "specVersion": "1.4",
-    "serialNumber": "urn:uuid:7aa075f1-0875-4db4-a684-3b6c8c81ad1d",
+    "serialNumber": "urn:uuid:dc8433ad-d6bd-49bb-9163-8ff9136d61d6",
     "version": 1,
     "metadata": {
         "component": {
             "bom-ref": "pkg:pypi/pypi-packages@0.1.0",
             "name": "pypi-packages",
-            "type": "Application",
+            "type": "application",
             "version": "0.1.0"
         },
         "tools": [
             {
-                "vendor": "MY VENDOR",
-                "name": "MY VENDOR",
+                "vendor": "LMCO",
+                "name": "SSCRM",
                 "version": "0.1.0",
                 "hashes": []
             }
@@ -26,11 +26,11 @@
             "version": "2.2.11",
             "publisher": "Damien Churchill",
             "description": "DB-API interface to Microsoft SQL Server for Python. (new Cython-based version)",
-            "type": "Library",
+            "type": "library",
             "purl": "pkg:pypi/pymssql@2.2.11",
             "externalReferences": [
                 {
-                    "type": "VCS",
+                    "type": "vcs",
                     "url": "https://github.com/pymssql/pymssql/blob/master/ChangeLog.rst"
                 },
                 {
@@ -38,7 +38,7 @@
                     "url": "http://pymssql.readthedocs.io"
                 },
                 {
-                    "type": "VCS",
+                    "type": "vcs",
                     "url": "https://github.com/pymssql/pymssql"
                 }
             ],
@@ -51,20 +51,20 @@
             ]
         },
         {
-            "bom-ref": "pkg:pypi/PyMySQL@1.1.0",
-            "name": "PyMySQL",
+            "bom-ref": "pkg:pypi/pymysql@1.1.0",
+            "name": "pymysql",
             "version": "1.1.0",
             "publisher": "",
             "description": "Pure Python MySQL Driver",
-            "type": "Library",
-            "purl": "pkg:pypi/PyMySQL@1.1.0",
+            "type": "library",
+            "purl": "pkg:pypi/pymysql@1.1.0",
             "externalReferences": [
                 {
                     "type": "Documentation",
                     "url": "https://pymysql.readthedocs.io/"
                 },
                 {
-                    "type": "VCS",
+                    "type": "vcs",
                     "url": "https://github.com/PyMySQL/PyMySQL"
                 }
             ],
@@ -81,15 +81,6 @@
         {
             "ref": "pkg:pypi/pypi-packages@0.1.0",
             "dependsOn": [
-                "pkg:pypi/#certifi@2024.2.2",
-                "pkg:pypi/#charset-normalizer@3.3.2",
-                "pkg:pypi/#idna@3.6",
-                "pkg:pypi/#jproperties@2.1.1",
-                "pkg:pypi/#numpy@1.25.1",
-                "pkg:pypi/#requests@2.28.2",
-                "pkg:pypi/#six@1.16.0",
-                "pkg:pypi/#urllib3@1.26.18",
-                "pkg:pypi/#robotframework-pabot@2.16.0",
                 "pkg:pypi/pymssql@2.2.11",
                 "pkg:pypi/pymysql@1.1.0"
             ]
