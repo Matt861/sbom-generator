@@ -1,0 +1,807 @@
+{
+  "bomFormat" : "CycloneDX",
+  "specVersion" : "1.5",
+  "serialNumber" : "urn:uuid:fa138c88-17cd-3f0d-aa83-e533fe3d7677",
+  "version" : 1,
+  "metadata" : {
+    "timestamp" : "2024-08-22T18:15:51Z",
+    "lifecycles" : [
+      {
+        "phase" : "build"
+      }
+    ],
+    "tools" : {
+      "components" : [
+        {
+          "author" : "OWASP Foundation",
+          "group" : "org.cyclonedx",
+          "name" : "cyclonedx-maven-plugin",
+          "version" : "2.8.1",
+          "description" : "CycloneDX Maven plugin",
+          "hashes" : [
+            {
+              "alg" : "MD5",
+              "content" : "42c73e70d517b359d40b757c368d68fc"
+            },
+            {
+              "alg" : "SHA-1",
+              "content" : "c66892e13fb7ed7b8105cb5a280fa767d9e0bf12"
+            },
+            {
+              "alg" : "SHA-256",
+              "content" : "566681b9fcb1b0178e101cd899d2ea399e2039255e208a1a477bc079158dbdc5"
+            },
+            {
+              "alg" : "SHA-512",
+              "content" : "93d7b7421ee2d91f84930e75a52864952f26fee96114740dab477ee5f0e62b6448759ad5a160f1749650379f771941100c7fd84ed523b2407d2004b928998ecb"
+            },
+            {
+              "alg" : "SHA-384",
+              "content" : "04b0c71c1b79f77e723e7db96c72705f50172e94df5a7f28edbd96024b886fff65f61f37fc77abb1d12b0809813ae665"
+            }
+          ],
+          "type" : "library"
+        }
+      ]
+    },
+    "component" : {
+      "group" : "com.lmco.crt",
+      "name" : "sbom-test-dependencies",
+      "version" : "0.1.0",
+      "licenses" : [ ],
+      "purl" : "pkg:maven/com.lmco.crt/sbom-test-dependencies@0.1.0?type=jar",
+      "type" : "library",
+      "bom-ref" : "pkg:maven/com.lmco.crt/sbom-test-dependencies@0.1.0?type=jar"
+    },
+    "properties" : [
+      {
+        "name" : "maven.goal",
+        "value" : "makeAggregateBom"
+      },
+      {
+        "name" : "maven.scopes",
+        "value" : "compile,provided,runtime,system"
+      }
+    ]
+  },
+  "components" : [
+    {
+      "group" : "antlr",
+      "name" : "antlr",
+      "version" : "2.7.7",
+      "description" : "A framework for constructing recognizers, compilers, and translators from grammatical descriptions containing Java, C#, C++, or Python actions.",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "f8f1352c52a4c6a500b597596501fc64"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "83cd2cd674a217ade95a4bb83a8a14f351f48bd0"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "88fbda4b912596b9f56e8e12e580cc954bacfb51776ecfddd3e18fc1cf56dc4c"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "311c3115f9f6651d1711c52d1739e25a70f25456cacb9a2cdde7627498c30b13d721133cc75b39462ad18812a82472ef1b3b9d64fab5abb0377c12bf82043a74"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "2e811e531ce30a2a905d093a00de596cf04406413b60422db8252b46125cadf07b71459cf6ac6da575ec030a9bf05e57"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/antlr/antlr@2.7.7?type=jar",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "http://www.antlr.org/"
+        }
+      ],
+      "type" : "library",
+      "bom-ref" : "pkg:maven/antlr/antlr@2.7.7?type=jar"
+    },
+    {
+      "group" : "org.dom4j",
+      "name" : "dom4j",
+      "version" : "2.1.3",
+      "description" : "flexible XML framework for Java",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "41efcf234c5a05a8c590f9b51d53ca66"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "a75914155a9f5808963170ec20653668a2ffd2fd"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "549f3007c6290f6a901e57d1d331b4ed0e6bf7384f78bf10316ffceeca834de6"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "c17d210d2a3d304ae03f725fcc6644e44185c945807f4980681972cbff946b5468d1dec84eb4f660627ee1f86ad4b8372990cd63ab956d4eb75a22d20dbd9cd1"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "930553b442d977537ccc76cf230d28f4c41d19ff438a5a33481942c3cc4dbe42378180c5cfdaf3872a0a8ec5e3518bb5"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/org.dom4j/dom4j@2.1.3?type=jar",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "http://dom4j.github.io/"
+        }
+      ],
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.dom4j/dom4j@2.1.3?type=jar"
+    },
+    {
+      "group" : "com.google.code.gson",
+      "name" : "gson",
+      "version" : "2.8.6",
+      "description" : "Gson JSON library",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "310f5841387183aca7900fead98d4858"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "9180733b7df8542621dc12e21e87557e8c99b8cb"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "c8fb4839054d280b3033f800d1f5a97de2f028eb8ba2eb458ad287e536f3f25f"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "902a1a5dce66303abff2ac4b8a2319035f718c42590c1ae593825cfb85a0003e52c3492fc7ae6b86eb3ed16656dc3fc6b918aa807b20b759d4753cb692031740"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "8289cd5863d035279a59fdf47febb53e39aec9bcb3da8bee14fc9911ee78d52e801f73ee3795cc00ab146baaf78f6181"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "Apache-2.0"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/com.google.code.gson/gson@2.8.6?type=jar",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "https://github.com/google/gson/gson"
+        },
+        {
+          "type" : "distribution-intake",
+          "url" : "https://oss.sonatype.org/service/local/staging/deploy/maven2/"
+        },
+        {
+          "type" : "issue-tracker",
+          "url" : "https://github.com/google/gson/issues"
+        },
+        {
+          "type" : "vcs",
+          "url" : "https://github.com/google/gson/gson/"
+        }
+      ],
+      "type" : "library",
+      "bom-ref" : "pkg:maven/com.google.code.gson/gson@2.8.6?type=jar"
+    },
+    {
+      "publisher" : "Apache Software Foundation",
+      "group" : "org.apache.poi",
+      "name" : "poi-ooxml",
+      "version" : "4.0.1",
+      "description" : "Apache POI - Java API To Access Microsoft Format Files",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "0b0b8b3e5a5234c7fab4d57d4a471f15"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "9ec84728bf4236b8f9ec7fef3fe1b705eef2b408"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "fc3016282bb72bc5e270072c4bbec227904c6b17c932d1e396e484ce6abe78d4"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "2e06829bd2df9001fa47cf672b31a9b640f16d1f8e9b8ca98bad2e0612a7b12cfbfe860b78f4c0a725f1b77e6b14979e2e44e52c452beddad35a3ce256539b48"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "c7dd33f67dbf91959e656b1170c15e86773ad17908d92b6e3b5d99298b6612c95b7dd7cb4a122e93b548fefb16dd8f67"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "Apache-2.0"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/org.apache.poi/poi-ooxml@4.0.1?type=jar",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "http://poi.apache.org/"
+        },
+        {
+          "type" : "mailing-list",
+          "url" : "http://mail-archives.apache.org/mod_mbox/poi-user/"
+        }
+      ],
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.apache.poi/poi-ooxml@4.0.1?type=jar"
+    },
+    {
+      "publisher" : "Apache Software Foundation",
+      "group" : "org.apache.poi",
+      "name" : "poi",
+      "version" : "4.0.1",
+      "description" : "Apache POI - Java API To Access Microsoft Format Files",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "063bd0d1d945ed53c51802a05bcc71c6"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "d8eaa341687a7dc48048d964d0d53238959ca9b5"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "e3dab03c5c81f885f6a643aec5fe2257cfba3cb244f26cceb4011e7492cb76c9"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "7d7206ebaae0357cc5d4e0b68e3189ce0b579a4ae5f3834819350216039ffd7aef21313926908dbd5ffdb69ca8e16494f3fa1958a0b31e8632eb5ccea6929227"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "1d1609c581e4f933694acb69a447dbe483d86e4a19f56e72d76baf51905b85bfe5559f4e85e3f744531d66c0823f8e79"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "Apache-2.0"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/org.apache.poi/poi@4.0.1?type=jar",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "http://poi.apache.org/"
+        },
+        {
+          "type" : "mailing-list",
+          "url" : "http://mail-archives.apache.org/mod_mbox/poi-user/"
+        }
+      ],
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.apache.poi/poi@4.0.1?type=jar"
+    },
+    {
+      "publisher" : "The Apache Software Foundation",
+      "group" : "commons-codec",
+      "name" : "commons-codec",
+      "version" : "1.11",
+      "description" : "The Apache Commons Codec package contains simple encoder and decoders for various formats such as Base64 and Hexadecimal. In addition to these widely used encoders and decoders, the codec package also maintains a collection of phonetic encoding utilities.",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "567159b1ae257a43e1391a8f59d24cfe"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "3acb4705652e16236558f0f4f2192cc33c3bd189"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "e599d5318e97aa48f42136a2927e6dfa4e8881dff0e6c8e3109ddbbff51d7b7d"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "d9586162b257386b5871e7e9ae255a38014a9efaeef5148de5e40a3b0200364dad8516bddd554352aa2e5337bec2cc11df88c76c4fdde96a40f3421aa60650d7"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "9ae3d8fd4c38f3af52c76c5f98039109901cb0f70700e6d9999b27cc4b30b188e2688aa4adcf6b846376bc3ca125907a"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "Apache-2.0"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/commons-codec/commons-codec@1.11?type=jar",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "http://commons.apache.org/proper/commons-codec/"
+        },
+        {
+          "type" : "build-system",
+          "url" : "https://builds.apache.org/"
+        },
+        {
+          "type" : "distribution-intake",
+          "url" : "https://repository.apache.org/service/local/staging/deploy/maven2"
+        },
+        {
+          "type" : "issue-tracker",
+          "url" : "http://issues.apache.org/jira/browse/CODEC"
+        },
+        {
+          "type" : "mailing-list",
+          "url" : "http://mail-archives.apache.org/mod_mbox/commons-user/"
+        },
+        {
+          "type" : "vcs",
+          "url" : "http://svn.apache.org/viewvc/commons/proper/codec/trunk"
+        }
+      ],
+      "type" : "library",
+      "bom-ref" : "pkg:maven/commons-codec/commons-codec@1.11?type=jar"
+    },
+    {
+      "publisher" : "The Apache Software Foundation",
+      "group" : "org.apache.commons",
+      "name" : "commons-collections4",
+      "version" : "4.2",
+      "description" : "The Apache Commons Collections package contains types that extend and augment the Java Collections Framework.",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "b290524be8a0dbb6521df95f4ce80c8d"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "54ebea0a5b653d3c680131e73fe807bb8f78c4ed"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "6a594721d51444fd97b3eaefc998a77f606dedb03def494f74755aead3c9df3e"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "e1ba369ffe4e0d8fb1c432ffb2171aaf4435ae2a88f6c91ebf8e7aea28791dc3035685f34a93a5b1370745374ea4bf3b9ca7a99bf73a0017811d29c13afa9a1e"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "5f7cf10ef89925ae0c4ad076ff93079157ce11f69608d8c37e9d6a9cc3a0fa5e65f1b5cd1b2dc7c45cb3886511354710"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "Apache-2.0"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/org.apache.commons/commons-collections4@4.2?type=jar",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "http://commons.apache.org/proper/commons-collections/"
+        },
+        {
+          "type" : "build-system",
+          "url" : "https://builds.apache.org/"
+        },
+        {
+          "type" : "distribution-intake",
+          "url" : "https://repository.apache.org/service/local/staging/deploy/maven2"
+        },
+        {
+          "type" : "issue-tracker",
+          "url" : "http://issues.apache.org/jira/browse/COLLECTIONS"
+        },
+        {
+          "type" : "mailing-list",
+          "url" : "http://mail-archives.apache.org/mod_mbox/commons-user/"
+        },
+        {
+          "type" : "vcs",
+          "url" : "https://git-wip-us.apache.org/repos/asf?p=commons-collections.git"
+        }
+      ],
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.apache.commons/commons-collections4@4.2?type=jar"
+    },
+    {
+      "publisher" : "The Apache Software Foundation",
+      "group" : "org.apache.commons",
+      "name" : "commons-math3",
+      "version" : "3.6.1",
+      "description" : "The Apache Commons Math project is a library of lightweight, self-contained mathematics and statistics components addressing the most common practical problems not immediately available in the Java programming language or commons-lang.",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "5b730d97e4e6368069de1983937c508e"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "e4ba98f1d4b3c80ec46392f25e094a6a2e58fcbf"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "1e56d7b058d28b65abd256b8458e3885b674c1d588fa43cd7d1cbb9c7ef2b308"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "8bc2438b3b4d9a6be4a47a58410b2d4d0e56e05787ab24badab8cbc9075d61857e8d2f0bffedad33f18f8a356541d00f80a8597b5dedb995be8480d693d03226"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "95d1186d9ca06a3ea2e6437ddec3a55698e2493d3e72f6f554746b74fa929892bd71a2ab501a4e7b1ce56b7cd64e7ab4"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "Apache-2.0"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/org.apache.commons/commons-math3@3.6.1?type=jar",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "http://commons.apache.org/proper/commons-math/"
+        },
+        {
+          "type" : "build-system",
+          "url" : "https://continuum-ci.apache.org/"
+        },
+        {
+          "type" : "distribution-intake",
+          "url" : "https://repository.apache.org/service/local/staging/deploy/maven2"
+        },
+        {
+          "type" : "issue-tracker",
+          "url" : "http://issues.apache.org/jira/browse/MATH"
+        },
+        {
+          "type" : "mailing-list",
+          "url" : "http://mail-archives.apache.org/mod_mbox/commons-user/"
+        },
+        {
+          "type" : "vcs",
+          "url" : "https://git-wip-us.apache.org/repos/asf?p=commons-math.git"
+        }
+      ],
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.apache.commons/commons-math3@3.6.1?type=jar"
+    },
+    {
+      "publisher" : "Apache Software Foundation",
+      "group" : "org.apache.poi",
+      "name" : "poi-ooxml-schemas",
+      "version" : "4.0.1",
+      "description" : "Apache POI - Java API To Access Microsoft Format Files",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "24694796cc9a0561f195904ac8a14224"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "d2a066340008d36cb289b71f0f7b6ad562940644"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "ffde5a1eaa164be8994830b28d802f40f20e2a880e475eac6b57550a98c205d2"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "986237f46ed0bafbe1e28d6621d8bf6ee93e65c3bf832ee568f9c73bc1ab06a2efb07fc0154a7b6b736bf211575b10920e0516a2f5c149ba91f193cdcfeba6f6"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "3aee6cd0a4a6f7f607a4e490da539053dff9a0433546d22a555232c3c829909c4fa726ab8bcb3acfff69e5b9ca608be3"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "Apache-2.0"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/org.apache.poi/poi-ooxml-schemas@4.0.1?type=jar",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "http://poi.apache.org/"
+        },
+        {
+          "type" : "mailing-list",
+          "url" : "http://mail-archives.apache.org/mod_mbox/poi-user/"
+        }
+      ],
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.apache.poi/poi-ooxml-schemas@4.0.1?type=jar"
+    },
+    {
+      "publisher" : "XmlBeans",
+      "group" : "org.apache.xmlbeans",
+      "name" : "xmlbeans",
+      "version" : "3.0.2",
+      "description" : "XmlBeans main jar",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "9a0067e2716f06a886176b578e910f3d"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "b9870982e53200b11c11800f4438620290522272"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "416469b17233e544159022fdd9664da82b65344bdb869026f76919da62946b9b"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "b5cea180f0a72a6b724dfd2d687d9328bee07f2e7cf5e90bc193d8159a404246002a278894e115ad41a230b5f64f015e0bb28332c26522834eaaf9727c99c0dc"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "aad9130561ba679803b625cd7f9b25a4f10cda92491fc3d4a0cf2258360b847193155509829819440592d85ea2449842"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "Apache-2.0"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/org.apache.xmlbeans/xmlbeans@3.0.2?type=jar",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "https://xmlbeans.apache.org/"
+        },
+        {
+          "type" : "issue-tracker",
+          "url" : "http://issues.apache.org/jira/secure/BrowseProject.jspa?id=10436"
+        },
+        {
+          "type" : "mailing-list",
+          "url" : "http://mail-archives.apache.org/mod_mbox/poi-user/"
+        },
+        {
+          "type" : "vcs",
+          "url" : "https://svn.apache.org/repos/asf/xmlbeans/"
+        }
+      ],
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.apache.xmlbeans/xmlbeans@3.0.2?type=jar"
+    },
+    {
+      "publisher" : "The Apache Software Foundation",
+      "group" : "org.apache.commons",
+      "name" : "commons-compress",
+      "version" : "1.18",
+      "description" : "Apache Commons Compress software defines an API for working with compression and archive formats. These include: bzip2, gzip, pack200, lzma, xz, Snappy, traditional Unix Compress, DEFLATE, DEFLATE64, LZ4, Brotli, Zstandard and ar, cpio, jar, tar, zip, dump, 7z, arj.",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "bcbecfff4bdb0d3d0cdead3d995da2ef"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "1191f9f2bc0c47a8cce69193feb1ff0a8bcb37d5"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "5f2df1e467825e4cac5996d44890c4201c000b43c0b23cffc0782d28a0beb9b0"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "cb581df3820fdfa810826f00be2aee1b7e551de8363ed6d8d712098e545d61cd9c903f057f7bbdf5af6bacfd314754a13ff9694b44f848df0de51239f01805fb"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "2261c4304563863121afde31f81e6d8b931ef1a30ea0c41f0460910166e724044a8799cfb68f7c3649ad938d4d58b26e"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "Apache-2.0"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/org.apache.commons/commons-compress@1.18?type=jar",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "https://commons.apache.org/proper/commons-compress/"
+        },
+        {
+          "type" : "build-system",
+          "url" : "https://builds.apache.org/"
+        },
+        {
+          "type" : "distribution-intake",
+          "url" : "https://repository.apache.org/service/local/staging/deploy/maven2"
+        },
+        {
+          "type" : "issue-tracker",
+          "url" : "https://issues.apache.org/jira/browse/COMPRESS"
+        },
+        {
+          "type" : "mailing-list",
+          "url" : "http://mail-archives.apache.org/mod_mbox/commons-user/"
+        },
+        {
+          "type" : "vcs",
+          "url" : "https://git-wip-us.apache.org/repos/asf?p=commons-compress.git"
+        }
+      ],
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.apache.commons/commons-compress@1.18?type=jar"
+    },
+    {
+      "group" : "com.github.virtuald",
+      "name" : "curvesapi",
+      "version" : "1.05",
+      "description" : "Implementation of various mathematical curves that define themselves over a set of control points. The API is written in Java. The curves supported are: Bezier, B-Spline, Cardinal Spline, Catmull-Rom Spline, Lagrange, Natural Cubic Spline, and NURBS.",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "2af6b93d130ec70e881aa98f64d2d2f4"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "d4f227b550a0ab2b48360dd0ef64c9de93e45424"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "1cec1c66b0235d44008baeb54af8a8cb923cab2abbcf3b4b2084fb5e6df6662b"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "deb3cae5aeda8d16fd5c052d5f3eef25d929179046d65d50b56bde7c878964556dc1002887a300f6a5ccb8e774748e887fdb694da0bba8384bf558cbe51e3733"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "491ea7a4128af666b84ba538cc9ffd330f9a30d50e1747f86b16215abf5bf1e638a73f080372e5447194773ae70397dd"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/com.github.virtuald/curvesapi@1.05?type=jar",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "https://github.com/virtuald/curvesapi"
+        },
+        {
+          "type" : "vcs",
+          "url" : "https://github.com/virtuald/curvesapi"
+        }
+      ],
+      "type" : "library",
+      "bom-ref" : "pkg:maven/com.github.virtuald/curvesapi@1.05?type=jar"
+    }
+  ],
+  "dependencies" : [
+    {
+      "ref" : "pkg:maven/com.lmco.crt/sbom-test-dependencies@0.1.0?type=jar",
+      "dependsOn" : [
+        "pkg:maven/antlr/antlr@2.7.7?type=jar",
+        "pkg:maven/org.dom4j/dom4j@2.1.3?type=jar",
+        "pkg:maven/com.google.code.gson/gson@2.8.6?type=jar",
+        "pkg:maven/org.apache.poi/poi-ooxml@4.0.1?type=jar"
+      ]
+    },
+    {
+      "ref" : "pkg:maven/antlr/antlr@2.7.7?type=jar",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "pkg:maven/org.dom4j/dom4j@2.1.3?type=jar",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "pkg:maven/com.google.code.gson/gson@2.8.6?type=jar",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "pkg:maven/org.apache.poi/poi-ooxml@4.0.1?type=jar",
+      "dependsOn" : [
+        "pkg:maven/org.apache.poi/poi@4.0.1?type=jar",
+        "pkg:maven/org.apache.poi/poi-ooxml-schemas@4.0.1?type=jar",
+        "pkg:maven/org.apache.commons/commons-compress@1.18?type=jar",
+        "pkg:maven/com.github.virtuald/curvesapi@1.05?type=jar"
+      ]
+    },
+    {
+      "ref" : "pkg:maven/org.apache.poi/poi@4.0.1?type=jar",
+      "dependsOn" : [
+        "pkg:maven/commons-codec/commons-codec@1.11?type=jar",
+        "pkg:maven/org.apache.commons/commons-collections4@4.2?type=jar",
+        "pkg:maven/org.apache.commons/commons-math3@3.6.1?type=jar"
+      ]
+    },
+    {
+      "ref" : "pkg:maven/commons-codec/commons-codec@1.11?type=jar",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "pkg:maven/org.apache.commons/commons-collections4@4.2?type=jar",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "pkg:maven/org.apache.commons/commons-math3@3.6.1?type=jar",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "pkg:maven/org.apache.poi/poi-ooxml-schemas@4.0.1?type=jar",
+      "dependsOn" : [
+        "pkg:maven/org.apache.xmlbeans/xmlbeans@3.0.2?type=jar"
+      ]
+    },
+    {
+      "ref" : "pkg:maven/org.apache.xmlbeans/xmlbeans@3.0.2?type=jar",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "pkg:maven/org.apache.commons/commons-compress@1.18?type=jar",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "pkg:maven/com.github.virtuald/curvesapi@1.05?type=jar",
+      "dependsOn" : [ ]
+    }
+  ]
+}
