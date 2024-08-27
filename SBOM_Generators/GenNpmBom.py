@@ -199,7 +199,7 @@ def main():
     sbom = generate_sbom_npm_from_lockfile(lockfile, sbom_template, component_template, package_manager, package_json)
 
     # Write SBOM to a file
-    with open("../sboms/npm_sbom.json", "w") as sbom_file:
+    with open("../sboms/npm_sbom2.json", "w") as sbom_file:
         json.dump(sbom, sbom_file, indent=4)
 
     print("SBOM.json generated successfully!")

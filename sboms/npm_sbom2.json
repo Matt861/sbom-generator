@@ -1,0 +1,314 @@
+{
+    "bomFormat": "CycloneDX",
+    "specVersion": "1.4",
+    "serialNumber": "urn:uuid:9e533af7-31b9-4552-8bc5-756d0223e68a",
+    "version": 1,
+    "metadata": {
+        "component": {
+            "bom-ref": "pkg:npm/npm-packages@0.1.0",
+            "name": "npm-packages",
+            "type": "library",
+            "version": "0.1.0"
+        },
+        "tools": [
+            {
+                "vendor": "MY VENDOR",
+                "name": "MY VENDOR",
+                "version": "0.1.0",
+                "hashes": []
+            }
+        ]
+    },
+    "components": [
+        {
+            "bom-ref": "pkg:npm/asynckit@0.4.0",
+            "name": "asynckit",
+            "version": "0.4.0",
+            "publisher": "Alex Indigo",
+            "description": "Minimal async jobs utility library, with streams support",
+            "type": "library",
+            "purl": "pkg:npm/asynckit@0.4.0",
+            "externalReferences": [
+                {
+                    "type": "vcs",
+                    "url": "git+https://github.com/alexindigo/asynckit.git"
+                },
+                {
+                    "type": "homepage",
+                    "url": "https://github.com/alexindigo/asynckit#readme"
+                }
+            ],
+            "licenses": [
+                {
+                    "license": {
+                        "id": "MIT"
+                    }
+                }
+            ]
+        },
+        {
+            "bom-ref": "pkg:npm/axios@0.27.2",
+            "name": "axios",
+            "version": "0.27.2",
+            "publisher": "Matt Zabriskie",
+            "description": "Promise based HTTP client for the browser and node.js",
+            "type": "library",
+            "purl": "pkg:npm/axios@0.27.2",
+            "externalReferences": [
+                {
+                    "type": "vcs",
+                    "url": "git+https://github.com/axios/axios.git"
+                },
+                {
+                    "type": "homepage",
+                    "url": "https://axios-http.com"
+                }
+            ],
+            "licenses": [
+                {
+                    "license": {
+                        "id": "MIT"
+                    }
+                }
+            ]
+        },
+        {
+            "bom-ref": "pkg:npm/combined-stream@1.0.8",
+            "name": "combined-stream",
+            "version": "1.0.8",
+            "publisher": "Felix Geisend\u00f6rfer",
+            "description": "A stream that emits multiple other streams one after another.",
+            "type": "library",
+            "purl": "pkg:npm/combined-stream@1.0.8",
+            "externalReferences": [
+                {
+                    "type": "vcs",
+                    "url": "git://github.com/felixge/node-combined-stream.git"
+                },
+                {
+                    "type": "homepage",
+                    "url": "https://github.com/felixge/node-combined-stream"
+                }
+            ],
+            "licenses": [
+                {
+                    "license": {
+                        "id": "MIT"
+                    }
+                }
+            ]
+        },
+        {
+            "bom-ref": "pkg:npm/delayed-stream@1.0.0",
+            "name": "delayed-stream",
+            "version": "1.0.0",
+            "publisher": "Felix Geisend\u00f6rfer",
+            "description": "Buffers events from a stream until you are ready to handle them.",
+            "type": "library",
+            "purl": "pkg:npm/delayed-stream@1.0.0",
+            "externalReferences": [
+                {
+                    "type": "vcs",
+                    "url": "git://github.com/felixge/node-delayed-stream.git"
+                },
+                {
+                    "type": "homepage",
+                    "url": "https://github.com/felixge/node-delayed-stream"
+                }
+            ],
+            "licenses": [
+                {
+                    "license": {
+                        "id": "MIT"
+                    }
+                }
+            ]
+        },
+        {
+            "bom-ref": "pkg:npm/follow-redirects@1.15.6",
+            "name": "follow-redirects",
+            "version": "1.15.6",
+            "publisher": "Ruben Verborgh",
+            "description": "HTTP and HTTPS modules that follow redirects.",
+            "type": "library",
+            "purl": "pkg:npm/follow-redirects@1.15.6",
+            "externalReferences": [
+                {
+                    "type": "vcs",
+                    "url": "git+ssh://git@github.com/follow-redirects/follow-redirects.git"
+                },
+                {
+                    "type": "homepage",
+                    "url": "https://github.com/follow-redirects/follow-redirects"
+                }
+            ],
+            "licenses": [
+                {
+                    "license": {
+                        "id": "MIT"
+                    }
+                }
+            ]
+        },
+        {
+            "bom-ref": "pkg:npm/form-data@4.0.0",
+            "name": "form-data",
+            "version": "4.0.0",
+            "publisher": "Felix Geisend\u00f6rfer",
+            "description": "A library to create readable \"multipart/form-data\" streams. Can be used to submit forms and file uploads to other web applications.",
+            "type": "library",
+            "purl": "pkg:npm/form-data@4.0.0",
+            "externalReferences": [
+                {
+                    "type": "vcs",
+                    "url": "git://github.com/form-data/form-data.git"
+                },
+                {
+                    "type": "homepage",
+                    "url": "https://github.com/form-data/form-data#readme"
+                }
+            ],
+            "licenses": [
+                {
+                    "license": {
+                        "id": "MIT"
+                    }
+                }
+            ]
+        },
+        {
+            "bom-ref": "pkg:npm/mime-db@1.52.0",
+            "name": "mime-db",
+            "version": "1.52.0",
+            "publisher": "Unknown",
+            "description": "Media Type Database",
+            "type": "library",
+            "purl": "pkg:npm/mime-db@1.52.0",
+            "externalReferences": [
+                {
+                    "type": "vcs",
+                    "url": "git+https://github.com/jshttp/mime-db.git"
+                },
+                {
+                    "type": "homepage",
+                    "url": "https://github.com/jshttp/mime-db#readme"
+                }
+            ],
+            "licenses": [
+                {
+                    "license": {
+                        "id": "MIT"
+                    }
+                }
+            ]
+        },
+        {
+            "bom-ref": "pkg:npm/mime-types@2.1.35",
+            "name": "mime-types",
+            "version": "2.1.35",
+            "publisher": "Unknown",
+            "description": "The ultimate javascript content-type utility.",
+            "type": "library",
+            "purl": "pkg:npm/mime-types@2.1.35",
+            "externalReferences": [
+                {
+                    "type": "vcs",
+                    "url": "git+https://github.com/jshttp/mime-types.git"
+                },
+                {
+                    "type": "homepage",
+                    "url": "https://github.com/jshttp/mime-types#readme"
+                }
+            ],
+            "licenses": [
+                {
+                    "license": {
+                        "id": "MIT"
+                    }
+                }
+            ]
+        },
+        {
+            "bom-ref": "pkg:npm/zustand@3.7.2",
+            "name": "zustand",
+            "version": "3.7.2",
+            "publisher": "Paul Henschel",
+            "description": "\ud83d\udc3b Bear necessities for state management in React",
+            "type": "library",
+            "purl": "pkg:npm/zustand@3.7.2",
+            "externalReferences": [
+                {
+                    "type": "vcs",
+                    "url": "git+https://github.com/pmndrs/zustand.git"
+                },
+                {
+                    "type": "homepage",
+                    "url": "https://github.com/pmndrs/zustand"
+                }
+            ],
+            "licenses": [
+                {
+                    "license": {
+                        "id": "MIT"
+                    }
+                }
+            ]
+        }
+    ],
+    "dependencies": [
+        {
+            "ref": "pkg:npm/npm-packages@0.1.0",
+            "dependsOn": [
+                "pkg:npm/zustand@3.7.2",
+                "pkg:npm/axios@0.27.2"
+            ]
+        },
+        {
+            "ref": "pkg:npm/asynckit@0.4.0",
+            "dependsOn": []
+        },
+        {
+            "ref": "pkg:npm/axios@0.27.2",
+            "dependsOn": [
+                "pkg:npm/follow-redirects@^1.14.9",
+                "pkg:npm/form-data@^4.0.0"
+            ]
+        },
+        {
+            "ref": "pkg:npm/combined-stream@1.0.8",
+            "dependsOn": [
+                "pkg:npm/delayed-stream@~1.0.0"
+            ]
+        },
+        {
+            "ref": "pkg:npm/delayed-stream@1.0.0",
+            "dependsOn": []
+        },
+        {
+            "ref": "pkg:npm/follow-redirects@1.15.6",
+            "dependsOn": []
+        },
+        {
+            "ref": "pkg:npm/form-data@4.0.0",
+            "dependsOn": [
+                "pkg:npm/asynckit@^0.4.0",
+                "pkg:npm/combined-stream@^1.0.8",
+                "pkg:npm/mime-types@^2.1.12"
+            ]
+        },
+        {
+            "ref": "pkg:npm/mime-db@1.52.0",
+            "dependsOn": []
+        },
+        {
+            "ref": "pkg:npm/mime-types@2.1.35",
+            "dependsOn": [
+                "pkg:npm/mime-db@1.52.0"
+            ]
+        },
+        {
+            "ref": "pkg:npm/zustand@3.7.2",
+            "dependsOn": []
+        }
+    ]
+}
