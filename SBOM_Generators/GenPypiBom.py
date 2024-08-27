@@ -77,7 +77,7 @@ def parse_dependency_tree(dependency_tree, relevant_packages, python_executable)
         # Check if the line is a child package
         if "├──" in line or "└──" in line:
             package_info = line.split('[')[0].split()  # Extracts 'six' from '└── six'
-            package_name = package_info[1]
+            package_name = package_info[1].lower()
             version_info = line.split('installed: ')[-1].strip(']')
             child_package = f"{package_name}=={version_info}"
 
@@ -175,9 +175,9 @@ def generate_sbom(parent_map, sbom_components, sbom_dependencies, component_temp
 
     # Generate dependencies list
     for parent, children in parent_map.items():
-        parent_purl = f"pkg:{package_manager}/{parent.split('==')[0]}@{parent.split('==')[1]}"
+        parent_purl = f"pkg:{package_manager}/{parent.lower().split('==')[0]}@{parent.split('==')[1]}"
         depends_on = [
-            f"pkg:{package_manager}/{child.split('==')[0]}@{child.split('==')[1]}" for child in children
+            f"pkg:{package_manager}/{child.lower().split('==')[0]}@{child.split('==')[1]}" for child in children
         ]
         dependency = {
             "ref": parent_purl,
@@ -194,7 +194,7 @@ def add_top_level_dependencies(sbom, requirements_txt, package_manager):
             if line and line.startswith('#'):
                 continue
             elif line and "==" in line:  # Ensure the line is not empty and contains '=='
-                name, version = line.split('==', 1)
+                name, version = line.lower().split('==', 1)
                 top_level_refs.append(f"pkg:{package_manager}/{name}@{version.lstrip('^~<>')}")
 
     top_level_entry = {

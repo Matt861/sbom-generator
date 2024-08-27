@@ -1,7 +1,7 @@
 {
     "bomFormat": "CycloneDX",
     "specVersion": "1.4",
-    "serialNumber": "urn:uuid:dc8433ad-d6bd-49bb-9163-8ff9136d61d6",
+    "serialNumber": "urn:uuid:51fdc867-ba44-4001-9d49-b650fad1d4a2",
     "version": 1,
     "metadata": {
         "component": {
@@ -90,7 +90,7 @@
             "dependsOn": []
         },
         {
-            "ref": "pkg:pypi/PyMySQL@1.1.0",
+            "ref": "pkg:pypi/pymysql@1.1.0",
             "dependsOn": []
         }
     ]
