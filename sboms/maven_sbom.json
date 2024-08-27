@@ -1,14 +1,17 @@
 {
     "bomFormat": "CycloneDX",
     "specVersion": "1.4",
-    "serialNumber": "urn:uuid:a8b88b32-7c2f-44b1-89ab-18fc5b23edfd",
+    "serialNumber": "urn:uuid:63b6bbe7-50c3-445c-839e-3d0586b785b9",
     "version": 1,
     "metadata": {
         "component": {
-            "bom-ref": "pkg:maven/maven-packages@0.1.0",
-            "name": "maven-packages",
-            "type": "application",
-            "version": "0.1.0"
+            "bom-ref": "pkg:maven/pkg:maven/com.lmco.crt/sbom-test-dependencies@0.1.0",
+            "group": "com.lmco.crt",
+            "name": "sbom-test-dependencies",
+            "version": "0.1.0",
+            "type": "library",
+            "purl": "pkg:maven/com.lmco.crt/sbom-test-dependencies@0.1.0",
+            "licenses": []
         },
         "tools": [
             {

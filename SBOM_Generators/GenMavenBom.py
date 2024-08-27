@@ -55,12 +55,17 @@ def fill_component_template(template, component_info):
     return replace_placeholders(template, component_info)
 
 
-def fill_sbom_template(template, package_manager):
+def fill_sbom_template(cyclonedx_bom, template, package_manager):
+    bom_ref_or_purl = clean_bom_ref_or_purl(cyclonedx_bom.get("metadata", {}).get("component", {}).get("bom-ref", ""))
     replacements = {
         "serialNumber": str(uuid.uuid4()),
-        "component_bom_ref": f"{package_manager}-packages@0.1.0",
-        "component_name": f"{package_manager}-packages",
+        "component_group": cyclonedx_bom.get("metadata", {}).get("component", {}).get("group", ""),
+        "component_name": cyclonedx_bom.get("metadata", {}).get("component", {}).get("name", ""),
         "component_version": "0.1.0",
+        "licenses": cyclonedx_bom.get("metadata", {}).get("component", {}).get("licenses", ""),
+        "purl": bom_ref_or_purl,
+        "type": cyclonedx_bom.get("metadata", {}).get("component", {}).get("type", ""),
+        "component_bom_ref": bom_ref_or_purl,
         "tool_vendor": "LMCO",
         "tool_name": "SSCRM",
         "tool_version": "0.1.0",
@@ -119,12 +124,12 @@ def main():
     cyclonedx_bom = load_cyclonedx_sbom(cyclonedx_sbom_file)
 
     # Load the SBOM and component templates
-    sbom_template = load_json_file("../templates/sbom_template.json")
+    sbom_template = load_json_file("../templates/sbom_template_maven.json")
     component_template = load_json_file("../templates/sbom_component_template_maven.json")
 
     package_manager = "maven"  # Set your package manager here
 
-    sbom = fill_sbom_template(sbom_template, package_manager)
+    sbom = fill_sbom_template(cyclonedx_bom, sbom_template, package_manager)
 
     # Convert and save the custom SBOM
     generate_custom_sbom(cyclonedx_bom, sbom["components"], sbom["dependencies"], component_template, package_manager)
