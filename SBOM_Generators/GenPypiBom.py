@@ -156,7 +156,7 @@ def generate_sbom(parent_map, sbom_components, sbom_dependencies, component_temp
                 if "github.com" in url.lower():
                     external_references.append({"type": "vcs", "url": url})
                 else:
-                    external_references.append({"type": key, "url": url})
+                    external_references.append({"type": key.lower(), "url": url})
 
             component_info = {
                 "component_bom_ref": purl,

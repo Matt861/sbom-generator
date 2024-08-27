@@ -1,7 +1,7 @@
 {
     "bomFormat": "CycloneDX",
     "specVersion": "1.4",
-    "serialNumber": "urn:uuid:51fdc867-ba44-4001-9d49-b650fad1d4a2",
+    "serialNumber": "urn:uuid:d627764f-83c5-41e9-9dd9-a9c8ed4ffe86",
     "version": 1,
     "metadata": {
         "component": {
@@ -34,7 +34,7 @@
                     "url": "https://github.com/pymssql/pymssql/blob/master/ChangeLog.rst"
                 },
                 {
-                    "type": "Documentation",
+                    "type": "documentation",
                     "url": "http://pymssql.readthedocs.io"
                 },
                 {
@@ -60,7 +60,7 @@
             "purl": "pkg:pypi/pymysql@1.1.0",
             "externalReferences": [
                 {
-                    "type": "Documentation",
+                    "type": "documentation",
                     "url": "https://pymysql.readthedocs.io/"
                 },
                 {
