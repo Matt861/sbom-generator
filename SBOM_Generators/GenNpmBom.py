@@ -37,8 +37,8 @@ def fill_sbom_template(template, package_manager):
         "component_bom_ref": f"{package_manager}-packages@0.1.0",
         "component_name": f"{package_manager}-packages",
         "component_version": "0.1.0",
-        "tool_vendor": "MY VENDOR",
-        "tool_name": "MY VENDOR",
+        "tool_vendor": "LMCO",
+        "tool_name": "SSCRM",
         "tool_version": "0.1.0",
         "package_manager": package_manager
     }
@@ -106,8 +106,8 @@ def process_dependencies(lockfile, sbom_components, sbom_dependencies, processed
         external_references = []
         if npm_info.get("repository", {}):
             external_references.append({"type": "vcs", "url": npm_info.get("repository", {}).get("url", "")})
-        if npm_info.get("homepage", ""):
-            external_references.append({"type": "homepage", "url": npm_info.get("homepage", "")})
+        # if npm_info.get("homepage", ""):
+        #     external_references.append({"type": "homepage", "url": npm_info.get("homepage", "")})
 
         if npm_info:
             component_info = {
@@ -199,7 +199,7 @@ def main():
     sbom = generate_sbom_npm_from_lockfile(lockfile, sbom_template, component_template, package_manager, package_json)
 
     # Write SBOM to a file
-    with open("../sboms/npm_sbom2.json", "w") as sbom_file:
+    with open("../sboms/npm_sbom3.json", "w") as sbom_file:
         json.dump(sbom, sbom_file, indent=4)
 
     print("SBOM.json generated successfully!")
