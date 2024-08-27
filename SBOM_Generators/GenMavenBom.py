@@ -34,63 +34,73 @@ def clean_bom_ref_or_purl(value):
     return value
 
 
-def generate_custom_sbom(cyclonedx_bom):
-    # Convert CycloneDX SBOM to custom format
-    custom_sbom = {
-        "bomFormat": cyclonedx_bom.get("bomFormat", "CycloneDX"),
-        "specVersion": cyclonedx_bom.get("specVersion", "1.3"),
-        "serialNumber": f"urn:uuid:{str(uuid.uuid4())}",
-        "version": 1,
-        "metadata": {
-            "component": {
-                "bom-ref": clean_bom_ref_or_purl(
-                    cyclonedx_bom.get("metadata", {}).get("component", {}).get("bom-ref", "")),
-                "name": cyclonedx_bom.get("metadata", {}).get("component", {}).get("name", ""),
-                "type": "Application",
-                "version": cyclonedx_bom.get("metadata", {}).get("component", {}).get("version", "")
-            },
-            "tools": [
-                {
-                    "vendor": "MY VENDOR",
-                    "name": "MY VENDOR",
-                    "version": "0.1.0",
-                    "hashes": []
-                }
-            ]
-        },
-        "components": [
-            {
-                "bom-ref": clean_bom_ref_or_purl(component.get("bom-ref", "")),
-                "name": component.get("name", ""),
-                "group": component.get("group", ""),
-                "version": component.get("version", ""),
-                "publisher": "Unknown",  # Customize as needed
-                "description": component.get("description", ""),
-                "type": component.get("type", "Library"),
-                "purl": clean_bom_ref_or_purl(component.get("purl", "")),
-                "scope": "compile",  # Customize as needed
-                "externalReferences": component.get("externalReferences", []),
-                "licenses": component.get("licenses", []),
-                # "licenses": [
-                #     {
-                #         "license": {
-                #             "id": license.get("id") or license.get("expression")
-                #         }
-                #     } for license in component.get("licenses", [])
-                # ]
-            } for component in cyclonedx_bom.get("components", [])
-        ],
-        "dependencies": [
-            {
-                "ref": clean_bom_ref_or_purl(dependency.get("ref", "")),
-                "dependsOn": [
-                    clean_bom_ref_or_purl(dep) for dep in dependency.get("dependsOn", [])
-                ]
-            } for dependency in cyclonedx_bom.get("dependencies", [])
-        ]
-    }
+def load_json_file(template_file):
+    with open(template_file, "r") as file:
+        template = json.load(file)
+    return template
 
-    return custom_sbom
+
+def replace_placeholders(data, replacements):
+    if isinstance(data, dict):
+        return {key: replace_placeholders(value, replacements) for key, value in data.items()}
+    elif isinstance(data, list):
+        return [replace_placeholders(item, replacements) for item in data]
+    elif isinstance(data, str):
+        return data.format(**replacements)
+    else:
+        return data
+
+
+def fill_component_template(template, component_info):
+    return replace_placeholders(template, component_info)
+
+
+def fill_sbom_template(template, package_manager):
+    replacements = {
+        "serialNumber": str(uuid.uuid4()),
+        "component_bom_ref": f"{package_manager}-packages@0.1.0",
+        "component_name": f"{package_manager}-packages",
+        "component_version": "0.1.0",
+        "tool_vendor": "LMCO",
+        "tool_name": "SSCRM",
+        "tool_version": "0.1.0",
+        "package_manager": package_manager
+    }
+    return replace_placeholders(template, replacements)
+
+
+def generate_custom_sbom(cyclonedx_bom, sbom_components, sbom_dependencies, component_template, package_manager):
+
+    # Convert CycloneDX SBOM to custom format
+    for maven_component in cyclonedx_bom.get("components", []):
+        component_bom_ref_or_purl = clean_bom_ref_or_purl(maven_component.get("bom-ref", ""))
+        component_info = {
+            "component_bom_ref": component_bom_ref_or_purl,
+            "component_name": maven_component.get("name", ""),
+            "component_group": maven_component.get("group", ""),
+            "component_version": maven_component.get("version", ""),
+            "component_publisher": "Unknown",
+            "component_description": maven_component.get("description", ""),
+            "component_type": maven_component.get("type", ""),
+            "component_purl": component_bom_ref_or_purl,
+            "component_scope": maven_component.get("scope", ""),
+            "package_manager": package_manager
+        }
+
+        component = fill_component_template(component_template, component_info)
+        component["licenses"] = maven_component.get("licenses", [])
+        component["externalReferences"] = maven_component.get("externalReferences", [])
+        sbom_components.append(component)
+
+    for dependency in cyclonedx_bom.get("dependencies", []):
+        depends_on = []
+        for dep in dependency.get("dependsOn", []):
+            depends_on.append(clean_bom_ref_or_purl(dep))
+
+        sbom_dependencies.append({
+            "ref": clean_bom_ref_or_purl(dependency.get("ref", "")),
+            "dependsOn": depends_on
+        })
 
 
 def save_sbom(sbom_data, output_file):
@@ -99,8 +109,8 @@ def save_sbom(sbom_data, output_file):
 
 
 def main():
-    pom_file = "./input/pom.xml"  # Replace with your actual pom.xml file path
-    output_file = "./sboms/maven_sbom.json"  # Replace with your desired output file path
+    pom_file = "../input/pom.xml"  # Replace with your actual pom.xml file path
+    output_file = "../sboms/maven_sbom.json"  # Replace with your desired output file path
 
     # Generate the CycloneDX SBOM using Maven
     cyclonedx_sbom_file = generate_cyclonedx_sbom_via_maven(pom_file)
@@ -108,9 +118,17 @@ def main():
     # Load the generated CycloneDX SBOM
     cyclonedx_bom = load_cyclonedx_sbom(cyclonedx_sbom_file)
 
+    # Load the SBOM and component templates
+    sbom_template = load_json_file("../templates/sbom_template.json")
+    component_template = load_json_file("../templates/sbom_component_template_maven.json")
+
+    package_manager = "maven"  # Set your package manager here
+
+    sbom = fill_sbom_template(sbom_template, package_manager)
+
     # Convert and save the custom SBOM
-    custom_sbom = generate_custom_sbom(cyclonedx_bom)
-    save_sbom(custom_sbom, output_file)
+    generate_custom_sbom(cyclonedx_bom, sbom["components"], sbom["dependencies"], component_template, package_manager)
+    save_sbom(sbom, output_file)
 
     print(f"Custom SBOM generated and saved to {output_file}")
 

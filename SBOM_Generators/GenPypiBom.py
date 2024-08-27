@@ -250,7 +250,7 @@ def main():
 
     # Load the SBOM and component templates
     sbom_template = load_json_file("../templates/sbom_template.json")
-    component_template = load_json_file("../templates/sbom_component_template_pypi.json")
+    component_template = load_json_file("../templates/sbom_component_template.json")
 
     package_manager = "pypi"  # Set your package manager here
 

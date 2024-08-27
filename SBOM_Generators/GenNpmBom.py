@@ -82,7 +82,7 @@ def clean_package_name(package_name):
     Removes any prefixes before 'node_modules/' or '/node_modules/'.
     """
     if 'node_modules/' in package_name:
-        package_name = package_name.split('node_modules/')[-1]
+        package_name = package_name.lower().split('node_modules/')[-1]
 
     return package_name
 
@@ -102,8 +102,13 @@ def process_dependencies(lockfile, sbom_components, sbom_dependencies, processed
             continue  # Avoid processing the same package multiple times
 
         processed_packages.add(parent_purl)
-
         npm_info = fetch_npm_info(clean_name, version)
+        external_references = []
+        if npm_info.get("repository", {}):
+            external_references.append({"type": "vcs", "url": npm_info.get("repository", {}).get("url", "")})
+        if npm_info.get("homepage", ""):
+            external_references.append({"type": "homepage", "url": npm_info.get("homepage", "")})
+
         if npm_info:
             component_info = {
                 "component_bom_ref": purl,
@@ -112,15 +117,12 @@ def process_dependencies(lockfile, sbom_components, sbom_dependencies, processed
                 "component_publisher": npm_info.get("author", {}).get("name", "Unknown"),
                 "component_description": npm_info.get("description", "No description available"),
                 "component_purl": purl,
-                "external_reference_type_1": "VCS" if "github.com" in npm_info.get("repository", {}).get("url", "").lower() else "Repository",
-                "external_reference_url_1": npm_info.get("repository", {}).get("url", ""),
-                "external_reference_type_2": "Homepage",
-                "external_reference_url_2": npm_info.get("homepage", ""),
                 "license_id": npm_info.get("license", "Unknown"),
                 "package_manager": package_manager
             }
 
             component = fill_component_template(component_template, component_info)
+            component["externalReferences"] = external_references
             sbom_components.append(component)
 
             depends_on = []
@@ -133,7 +135,7 @@ def process_dependencies(lockfile, sbom_components, sbom_dependencies, processed
                 else:
                     dep_version = "Unknown"
 
-                child_purl = f"pkg:{package_manager}/{dep_name}@{dep_version}"
+                child_purl = f"pkg:{package_manager}/{dep_name.lower()}@{dep_version}"
                 depends_on.append(child_purl)
 
             sbom_dependencies.append({
@@ -197,7 +199,7 @@ def main():
     sbom = generate_sbom_npm_from_lockfile(lockfile, sbom_template, component_template, package_manager, package_json)
 
     # Write SBOM to a file
-    with open("../sboms/npm_sbom5.json", "w") as sbom_file:
+    with open("../sboms/npm_sbom.json", "w") as sbom_file:
         json.dump(sbom, sbom_file, indent=4)
 
     print("SBOM.json generated successfully!")

@@ -6,17 +6,8 @@
     "description": "{component_description}",
     "type": "library",
     "purl": "pkg:{package_manager}/{component_purl}",
-    "externalReferences": [
-        {
-            "type": "{external_reference_type_1}",
-            "url": "{external_reference_url_1}"
-        },
-        {
-            "type": "{external_reference_type_2}",
-            "url": "{external_reference_url_2}"
-        }
-    ],
-    "licenses": [
+    "externalReferences": [],
+        "licenses": [
         {
             "license": {
                 "id": "{license_id}"

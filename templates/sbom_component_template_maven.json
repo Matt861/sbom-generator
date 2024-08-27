@@ -1,0 +1,13 @@
+{
+    "bom-ref": "{component_bom_ref}",
+    "name": "{component_name}",
+    "group": "{component_group}",
+    "version": "{component_version}",
+    "publisher": "{component_publisher}",
+    "description": "{component_description}",
+    "type": "{component_type}",
+    "purl": "{component_purl}",
+    "scope": "{component_scope}",
+    "externalReferences": [],
+    "licenses": []
+}
